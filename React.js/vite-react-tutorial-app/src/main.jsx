@@ -1,6 +1,6 @@
 import React, { Fragment, StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+// import './index.css'
 import App from './App.jsx'
 
 
@@ -16,12 +16,13 @@ console.dir(element)
 
 const e = React.createElement('h1', {className: 'text'}, 'Hello world')
 
+
 // --- JSX consoledagi objectni qaytaradi --- //
 
 console.dir(e)
 
 const el = (
-    <Fragment> {/* React.js JSX elementlar har doim bitta type selectorga yoki React Fragmentga o'ralib turishi kerak, masalan: `<div></div>, <Fragment></Fragment>, <></>` */}
+    <Fragment> {/* --- React.js JSX elementlar har doim bitta type selectorga yoki React Fragmentga o'ralib turishi kerak, masalan: `<div></div>, <Fragment></Fragment>, <></>` --- */}
         {element}
         <button type='button'>Click me</button>
     </Fragment>
