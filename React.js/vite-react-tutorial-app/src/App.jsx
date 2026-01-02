@@ -37,6 +37,10 @@ const Button = () => {
         )
     }
 
+    const styles = {
+        marginTop: 20,
+    }
+
     return (
         <>
             <button>Login</button>
@@ -44,16 +48,17 @@ const Button = () => {
             <button>
                 {getItem()}
             </button> <br />
-            {
-                getLogin()
-            }
-
-            {/* --- Componentning contentini ternary operator orqali o'zgartirish --- */}
-            <button>
+            <div style={styles}>
                 {
-                    isLogin ? 'Logout' : 'Login'
+                    getLogin()
                 }
-            </button>
+                {/* --- Componentning contentini ternary operator orqali o'zgartirish --- */}
+                <button>
+                    {
+                        isLogin ? 'Logout' : 'Login'
+                    }
+                </button>
+            </div>
         </>
     )
 }
