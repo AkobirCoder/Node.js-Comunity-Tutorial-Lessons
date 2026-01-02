@@ -1,14 +1,84 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+// import './App.css'
 
-function App() {
-    const [count, setCount] = useState(0)
+
+// --- Components --- /
+
+const Text = () => {
+    return (
+        <p style={{textAlign: 'justify'}}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Quidem molestiae id blanditiis optio ex a iste illum veniam velit quo.
+        </p>
+    )
+}
+
+const Button = () => {
+    const item = 'Login'
+
+    const getItem = () => <p style={{margin: 0, padding: 0}}>Logout</p>
+
+    const isLogin = true;
+
+
+    // --- Componentning contentini function yordamida condition orqali o'zgartirish --- //
+
+    const getLogin = () => {
+        if (isLogin) {
+            return (
+                <button>Logout</button>
+            )
+        }
+
+        return (
+            <button>Login</button>
+        )
+    }
 
     return (
         <>
-            <div>
+            <button>Login</button>
+            <button>{item}</button>
+            <button>
+                {getItem()}
+            </button> <br />
+            {
+                getLogin()
+            }
+
+            {/* --- Componentning contentini ternary operator orqali o'zgartirish --- */}
+            <button>
+                {
+                    isLogin ? 'Logout' : 'Login'
+                }
+            </button>
+        </>
+        
+    )
+}
+
+const Fields = () => {
+    return (
+        <input 
+            type="text" 
+            name="input" 
+            style={{
+                width: 500
+            }} 
+            disabled={true} 
+            placeholder="Enter your name" 
+        />
+    )
+} 
+
+function App() {
+    // const [count, setCount] = useState(0)
+
+    return (
+        <>
+            {/* <div>
                 <a href="https://vite.dev" target="_blank">
                     <img src={viteLogo} className="logo" alt="Vite logo" />
                 </a>
@@ -27,7 +97,14 @@ function App() {
             </div>
             <p className="read-the-docs">
                 Click on the Vite and React logos to learn more
-            </p>
+            </p> */}
+
+            <h1>Assalomu alaykum</h1>
+
+            {/* --- Components --- */}
+            <Text />
+            <Button />
+            <Fields />
         </>
     )
 }
