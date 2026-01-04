@@ -3,12 +3,14 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
+import { Component } from "react"
 
-// --- Components --- /
+
+// --- Components --- //
 
 const Text = () => {
     return (
-        <p style={{textAlign: 'justify'}}>
+        <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Quidem molestiae id blanditiis optio ex a iste illum veniam velit quo.
         </p>
@@ -77,6 +79,59 @@ const Fields = () => {
     )
 } 
 
+
+// --- Class component --- //
+
+class Card extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            count: 0,
+        }
+    }
+
+    onIncrement = () => {
+        this.setState((prevState) => {
+            return {
+                count: prevState.count + 1,
+            }
+        })
+    }
+
+    render() {
+        const styles = {
+            margin: '0 auto',
+            color: 'white',
+            width: 700,
+            height: 350,
+            backgroundColor: 'blue',
+            textAlign: 'center',
+        }
+
+        const {ism, familiya} = this.props
+
+        return (
+            <div style={styles}>
+                <h1 style={{fontWeight: 'normal', paddingTop: 100}}>Count: {this.state.count}</h1>
+                <button 
+                    type="button"
+                    style={{
+                        padding: '15px 25px',
+                        fontWeight: 'bolder',
+                        fontSize: 20,
+                        border: 'none',
+                        cursor: 'pointer',
+                    }}
+                    onClick={this.onIncrement}
+                >
+                    Click
+                </button>
+                <p>{ism} {familiya}</p>
+            </div>
+        )
+    }
+}
+
 function App() {
     // const [count, setCount] = useState(0)
 
@@ -103,12 +158,17 @@ function App() {
                 Click on the Vite and React logos to learn more
             </p> */}
 
-            <h1>Assalomu alaykum</h1>
+            <div style={{textAlign: 'center'}}>
+                <h1>Assalomu alaykum</h1>
+                {/* --- Components --- */}
+                <Text />
+                <Button />
+                <Fields />
+                <hr />
 
-            {/* --- Components --- */}
-            <Text />
-            <Button />
-            <Fields />
+                {/* --- Class component --- */}
+                <Card ism={'Akobir'} familiya={'Usmonov'} />
+            </div>
         </>
     )
 }
