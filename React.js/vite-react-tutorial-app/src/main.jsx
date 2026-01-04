@@ -21,17 +21,17 @@ const e = React.createElement('h1', {className: 'text'}, 'Hello world')
 
 console.dir(e)
 
-const el = (
-    <Fragment> {/* --- React.js JSX elementlar har doim bitta type selectorga yoki React Fragmentga o'ralib turishi kerak, masalan: `<div></div>, <Fragment></Fragment>, <></>` --- */}
-        {element}
-        <button type='button'>Click me</button>
-    </Fragment>
-)
+// const el = (
+//     <Fragment> {/* --- React.js JSX elementlar har doim bitta type selectorga yoki React Fragmentga o'ralib turishi kerak, masalan: `<div></div>, <Fragment></Fragment>, <></>` --- */}
+//         {element}
+//         <button type='button'>Click me</button>
+//     </Fragment>
+// )
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <App />
-        {element}
-        {el}
+        {/* {element}
+        {el} */}
     </StrictMode>,
 )
