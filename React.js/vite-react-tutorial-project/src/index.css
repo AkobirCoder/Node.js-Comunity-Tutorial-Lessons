@@ -1,68 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.app {
+    width: 100%;
+    height: 100vh;
+    background-color: #0D1117;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.wrapper-card {
+    margin: 50px auto;
+    width: 70%;
+    border-radius: 10px;
+    background: linear-gradient(112deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.1) 73.15%);
+    box-shadow: 0px 1px 24px -1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    max-height: 85vh;
+    overflow-y: scroll;
+    padding: 20px;
+    position: relative;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 0, 0, 0.4);
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-info h1 {
+    color: #fff;
+}
+
+.card-info span {
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    background-color: Gold;
+    padding: 5px;
+    border-radius: 100%;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form input {
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    height: 35px;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+}
+
+.form input::placeholder {
+    font-size: 17px;
+}
+
+.form button {
+    width: 101px;
+    height: 35px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid gold;
+    color: gold;
+    font-size: 17px;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.form button:hover {
+    color: #000;
+    background-color: gold;
+}
+
+.shopping-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-item {
+    padding: 5px 10px;
+    border-bottom: 1px solid gold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.list-item.active {
+    background: #42ade3;
+    color: #fff;
+}
+
+.list-item .item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.list-item .item-info span {
+    width: 30px;
+    text-align: center;
+    padding: 5px;
+    background-color: gold;
+    font-weight: bold;
+    border-bottom-left-radius: 5px;
+}
+
+.list-item .item-info p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.list-item .item-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.list-item .item-actions span {
+    font-size: 30px;
+    flex-shrink: 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.list-item .item-actions .times {
+    color: gold;
+}
+
+.list-item .item-actions .check {
+    color: #fff;
+}
+
+.list-item.active .item-actions span {
+    color: #000;
+}
+
+.filter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.btns {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.btns button {
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border: 1px solid gold;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.btns button:hover,
+.btns button.active {
+    background-color: gold;
+    color: #000;
 }
