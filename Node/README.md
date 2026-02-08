@@ -4,19 +4,14 @@
   <tr>
     <td>
       <img
-        src="./assets/node-js.png"
-        alt="Node.js JavaScript"
-        width="160"
-        height="160"
-        style="border-radius: 50%; background:#0d1117; padding:20px;"
+        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
+        width="140"
+        style="border-radius:50%; background:#0d1117; padding:15px;"
       />
     </td>
-    <td style="padding-left: 20px; vertical-align: middle;">
+    <td style="padding-left:20px;">
       <h2>Node.js JavaScript Backend</h2>
-      <p>
-        Backend application built with Node.js and JavaScript.<br/>
-        REST API • Express • JavaScript • Scalable Architecture
-      </p>
+      <p>REST API • Express • JavaScript</p>
     </td>
   </tr>
 </table>
