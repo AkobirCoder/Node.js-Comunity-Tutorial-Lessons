@@ -3,35 +3,21 @@
 <table align="center">
   <tr>
     <td>
-      <svg width="170" height="170" viewBox="0 0 170 170">
-        <circle cx="85" cy="85" r="85" fill="#0d1117"/>
-        <image
-          href="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg"
-          x="25"
-          y="25"
-          width="120"
-          height="120"
-        />
-        <text
-          x="85"
-          y="105"
-          text-anchor="middle"
-          font-size="42"
-          font-weight="bold"
-          fill="#ffffff"
-          font-family="Arial, Helvetica, sans-serif"
-        >
-          JS
-        </text>
-      </svg>
+      <img
+        src="./assets/node-js.png"
+        alt="Node.js JavaScript"
+        width="160"
+        height="160"
+        style="border-radius: 50%; background:#0d1117; padding:20px;"
+      />
     </td>
-
     <td style="padding-left: 20px; vertical-align: middle;">
       <h2>Node.js JavaScript Backend</h2>
       <p>
-        Server-side JavaScript runtime built on Node.js.<br/>
+        Backend application built with Node.js and JavaScript.<br/>
         REST API • Express • JavaScript • Scalable Architecture
       </p>
     </td>
   </tr>
 </table>
+
