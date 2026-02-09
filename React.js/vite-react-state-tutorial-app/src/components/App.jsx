@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from './card'
+import './style/index.css'
 
 const App = () => {
     const data = [
@@ -24,7 +25,14 @@ const App = () => {
     ]
     
     return (
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20}}>
+        <div 
+            style={{
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(3, 1fr)', 
+                gap: 20
+            }}
+            className='app'
+        >
             {/* --- Componentning contentini propslar orqali berish usuli --- */}
             
             {/* <Card
