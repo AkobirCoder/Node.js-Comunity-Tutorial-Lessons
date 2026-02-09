@@ -29,7 +29,7 @@ class StateCard extends Component {
         });
     };
 
-    onDecrement = () => {
+    onDecrement() {
         this.setState((prevState) => {
             return {
                 count: prevState.count - 1,
@@ -95,7 +95,8 @@ class StateCard extends Component {
                     <button className="btn btn-success" onClick={() => onIncrement(10)}>
                         increment
                     </button>
-                    <button className="btn btn-danger" onClick={onDecrement}>
+                    {/* --- 4-usul: `context this` ni function'ga bog'lashning render'da `bind()` methodini ishlatish --- */}
+                    <button className="btn btn-danger" onClick={onDecrement.bind(this)}>
                         decrement
                     </button>
                     <button className="btn btn-primary" onClick={onReset}>
