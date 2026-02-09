@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    margin: 20px;
+}
+
+.card {
+    padding: 20px;
+    border: 1px solid #1f1f1f;
+    border-radius: 10px;
+}
