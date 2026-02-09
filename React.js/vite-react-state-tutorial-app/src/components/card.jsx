@@ -7,10 +7,10 @@ const Card = ({title, category, image}) => { // Bu yerda props'dan ma'lumotlar t
     // const {title, category, image} = props {/* Bu yerda props'dan ma'lumotlar destrukturizatsiya qilinadi */}
 
     return (
-        <div>
-            <img width={'100%'} src={image} alt="Course image" />
-            <h1>{title()}</h1>
-            <p>{category.category}</p>
+        <div className='card'>
+            <img style={{borderRadius: 10}} width={'100%'} src={image} alt="Course image" />
+            <h1 style={{marginBottom: 10}}>{title()}</h1>
+            <p style={{margin: 0}}>{category.category}</p>
         </div>
     )
 }
