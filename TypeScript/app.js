@@ -8,7 +8,7 @@ var isMarried = false;
 var age = 22;
 text = 'Assalomu alaykum';
 isMarried = true;
-age = 45;
+age = 40;
 console.log(text);
 console.log(isMarried);
 console.log(age);
