@@ -14,7 +14,7 @@ let age: number = 22;
 
 text = 'Assalomu alaykum';
 isMarried = true;
-age = 45;
+age = 40;
 
 console.log(text);
 console.log(isMarried);
