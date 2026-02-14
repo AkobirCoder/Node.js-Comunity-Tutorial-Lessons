@@ -16,9 +16,9 @@ text = 'Assalomu alaykum';
 isMarried = true;
 age = 40;
 
-console.log(text);
+console.log(text); // --- Assalomu alaykum --- //
 console.log('-------------------');
-console.log(isMarried);
+console.log(isMarried); // --- true --- //
 console.log('-------------------');
-console.log(age);
+console.log(age); // --- 40 --- //
 console.log('-------------------');
