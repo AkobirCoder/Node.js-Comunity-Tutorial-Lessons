@@ -14,7 +14,7 @@ const bonus: number = 5000;
 
 const totalSalary = salary + bonus; // 15000 (number)
 
-console.log(totalSalary);
+console.log(totalSalary); // --- 15000 --- //
 
 console.log('-------------------');
 
