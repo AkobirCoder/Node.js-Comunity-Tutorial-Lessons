@@ -2,40 +2,40 @@ import React, { Component } from 'react'
 
 class StateCard extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             count: 0,
             text: "Akobir",
             textInput: "",
             age: "",
-        };
+        }
 
         // --- 1-usul: `context this` ni function'ga bog'lashning `bind()` methodi orqali bog'lash --- //
-        this.changeHandlerInput = this.changeHandlerInput.bind(this);
+        this.changeHandlerInput = this.changeHandlerInput.bind(this)
     }
 
-  // --- setState callback function bo'lib u har doim object qaytaradi --- //
-  // --- setState'ni ichida faqat ko'rsatilgan state key o'zgaradi, bunda state'dagi boshqa keylar o'zgarmaydi --- //
-  // --- bunda state'dagi text setState'da chaqirib o'zgartirilmasa u boshqa hollarda o'zgarmaydi --- //
+    // --- setState callback function bo'lib u har doim object qaytaradi --- //
+    // --- setState'ni ichida faqat ko'rsatilgan state key o'zgaradi, bunda state'dagi boshqa keylar o'zgarmaydi --- //
+    // --- bunda state'dagi text setState'da chaqirib o'zgartirilmasa u boshqa hollarda o'zgarmaydi --- //
 
     onIncrement = (initialValue) => {
         this.setState(({ count }) => {
             return {
-            //   count: count + 1,
-              count: count + initialValue,
-              text: "Usmonov",
-            };
-        });
-    };
+            //  count: count + 1,
+                count: count + initialValue,
+                text: "Usmonov",
+            }
+        })
+    }
 
     onDecrement() {
         this.setState((prevState) => {
             return {
                 count: prevState.count - 1,
-            };
-        });
-    };
+            }
+        })
+    }
 
     onReset = () => {
         // this.setState((prevState) => {
@@ -47,8 +47,8 @@ class StateCard extends Component {
         this.setState((prevState) => ({
             count: (prevState.count = 0),
             text: (prevState.text = "Akobir"),
-        }));
-    };
+        }))
+    }
 
     // --- Quyidagi function `function declarition` bo'lgani sabab React'ning qat'iy rejimi (StrictMode) tufayli this `undefined` bo'ladi --- //
     // --- Ammo function `arrow function` bo'lsa unda `context this` yuqoridagi state object'ga osiladi --- //
@@ -56,13 +56,13 @@ class StateCard extends Component {
     changeHandlerInput(event) {
         this.setState({
             textInput: event.target.value,
-        });
+        })
     }
 
     // --- 2-usul: `context this` ni function'ga bog'lashning `arrow function` dan foydalanish usuli --- //
 
     changeHandler = (event, number) => {
-        console.log(number);
+        console.log(number)
 
         this.setState({
             age: event.target.value,
@@ -70,11 +70,11 @@ class StateCard extends Component {
     }
 
     render() {
-        const { image, title, category } = this.props;
+        const { image, title, category } = this.props
 
-        const { count, text, textInput, age } = this.state;
+        const { count, text, textInput, age } = this.state
 
-        const { onIncrement, onDecrement, onReset, changeHandlerInput, changeHandler } = this;
+        const { onIncrement, onDecrement, onReset, changeHandlerInput, changeHandler } = this
 
         return (
             <div className="card">
@@ -127,7 +127,7 @@ class StateCard extends Component {
                     <label className="form-label">Age</label>
                 </div>
             </div>
-        );
+        )
     }
 }
 
