@@ -17,5 +17,8 @@ isMarried = true;
 age = 40;
 
 console.log(text);
+console.log('-------------------');
 console.log(isMarried);
+console.log('-------------------');
 console.log(age);
+console.log('-------------------');
