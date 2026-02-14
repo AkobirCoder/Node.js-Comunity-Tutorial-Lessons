@@ -6,7 +6,7 @@ console.log('-------------------');
 var salary = 10000;
 var bonus = 5000;
 var totalSalary = salary + bonus; // 15000 (number)
-console.log(totalSalary);
+console.log(totalSalary); // --- 15000 --- //
 console.log('-------------------');
 // --- String va number'ni qo'shish --- //
 // --- Bu yerda bonus1 string bo'lgani uchun, totalSalary1 ham string bo'ladi va qo'shish o'rniga concatenation (birlashtirish) amalga oshadi. --- //
