@@ -1,7 +1,7 @@
 import React from 'react'
 import { ShoppingListItem } from './'
 
-const ShoppingList = ({data}) => {
+const ShoppingList = ({data, onDelete, onToggleActive}) => {
     return (
         <div className='shopping-list'>
             {
@@ -10,6 +10,8 @@ const ShoppingList = ({data}) => {
                         <ShoppingListItem
                             key={item.id}
                             item={item}
+                            onDeleteItem={() => onDelete(item.id)}
+                            onToggleActiveItem={() => onToggleActive(item.id)}
                         />
                     )
                 })
