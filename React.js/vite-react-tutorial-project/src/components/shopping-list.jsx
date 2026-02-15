@@ -1,5 +1,5 @@
 import React from 'react'
-import ShoppingListItem from './shopping-list-item'
+import { ShoppingListItem } from './'
 
 const ShoppingList = ({data}) => {
     return (
