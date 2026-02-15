@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Info = () => {
+const ShoppingInfo = () => {
     return (
         <div className='card-info'>
             <h1>Shopping List</h1>
@@ -9,4 +9,4 @@ const Info = () => {
     )
 }
 
-export default Info
+export default ShoppingInfo
