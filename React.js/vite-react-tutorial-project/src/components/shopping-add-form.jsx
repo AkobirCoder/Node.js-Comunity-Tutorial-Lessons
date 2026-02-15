@@ -10,7 +10,7 @@ class ShoppingAddForm extends Component {
     }
 
     onChangeHandler = (event) => {
-        const {name, value} = event.target;
+        const {name, value} = event.target
 
         this.setState((prevState) => {
             return {...prevState, [name]: value}
