@@ -1,4 +1,4 @@
-export const data = [
+export const array = [
     {
         id: 1,
         size: 14,
@@ -9,7 +9,7 @@ export const data = [
         id: 2,
         size: 10,
         title: 'Buy Ananas',
-        active: true,
+        active: false,
     },
     {
         id: 3,
