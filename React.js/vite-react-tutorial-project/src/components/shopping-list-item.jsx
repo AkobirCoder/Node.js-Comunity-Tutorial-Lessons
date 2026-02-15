@@ -8,30 +8,22 @@ class ShoppingListItem extends Component {
         }
     }
 
-    onActiveHandler = () => {
-        this.setState((prevState) => {
-            return {
-                active: !prevState.active,
-            }
-        })
-    }
-
     render() {
-        const {item} = this.props
+        const {item, onDeleteItem, onToggleActiveItem} = this.props
 
-        const {active} = this.state
+        const {size, title, active, } = item
 
-        const {onActiveHandler} = this
+        // const {onActiveHandler} = this
 
         return (
             <div className={`list-item ${active && 'active'}`}>
                 <div className='item-info'>
-                    <span>{item.size}</span>
-                    <p>{item.title}</p>
+                    <span>{size}</span>
+                    <p>{title}</p>
                 </div>
                 <div className='item-actions'>
-                    <span className='check' onClick={onActiveHandler}>&#10003;</span>
-                    <span className='times'>&times;</span>
+                    <span className='check' onClick={onToggleActiveItem}>&#10003;</span>
+                    <span className='times' onClick={onDeleteItem}>&times;</span>
                 </div>
             </div>
         )
