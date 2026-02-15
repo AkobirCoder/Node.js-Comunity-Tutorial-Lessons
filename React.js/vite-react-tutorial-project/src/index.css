@@ -224,3 +224,18 @@
     background-color: gold;
     color: #000;
 }
+
+@media only screen and (max-width: 800px) {
+    .wrapper {
+        height: 100vh;
+        grid-template-columns: 100%;
+    }
+
+    .wrapper img {
+        display: none;
+    }
+
+    .card {
+        height: 100vh;
+    }
+}
