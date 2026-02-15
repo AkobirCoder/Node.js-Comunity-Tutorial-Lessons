@@ -1,44 +1,32 @@
-import React from 'react'
-import Info from './shopping-info'
-import ShoppingAddForm from './shopping-add-form'
-import ShoppingList from './shopping-list'
-import Filter from './filter'
+import React, { Component } from 'react'
+import { Filter, ShoppingAddForm, ShoppingInfo, ShoppingList } from './'
+import { data } from '../constants/'
 
-const App = () => {
-    const data = [
-        {
-            id: 1,
-            size: 14,
-            title: 'Buy Bananas',
-            active: false,
-        },
-        {
-            id: 2,
-            size: 10,
-            title: 'Buy Ananas',
-            active: true,
-        },
-        {
-            id: 3,
-            size: 8,
-            title: 'Buy Milk',
-            active: false,
-        },
-    ]
+class App extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: data
+        }
+    }
 
-    return (
-        <div className='app'>
-            <div className='wrapper'>
-                <div className='wrapper-card'>
-                    <Info />
-                    <ShoppingAddForm />
-                    <ShoppingList data={data} />
-                    <Filter />
+    render() {
+        const {data} = this.state
+
+        return (
+            <div className='app'>
+                <div className='wrapper'>
+                    <div className='wrapper-card'>
+                        <ShoppingInfo />
+                        <ShoppingAddForm />
+                        <ShoppingList data={data} />
+                        <Filter />
+                    </div>
+                    <img src="/earth.svg" alt="Earth image" />
                 </div>
-                <img src="/earth.svg" alt="Earth image" />
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default App
