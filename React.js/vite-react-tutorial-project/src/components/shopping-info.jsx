@@ -1,10 +1,10 @@
 import React from 'react'
 
-const ShoppingInfo = () => {
+const ShoppingInfo = ({dataLength}) => {
     return (
         <div className='card-info'>
             <h1>Shopping List</h1>
-            <span>3</span>
+            <span>{dataLength}</span>
         </div>
     )
 }
