@@ -9,7 +9,7 @@ export const array = [
         id: 2,
         size: 10,
         title: 'Buy Ananas',
-        active: false,
+        active: true,
     },
     {
         id: 3,
