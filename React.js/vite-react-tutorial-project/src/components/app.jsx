@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { v4 as uuid4 } from 'uuid'
-import { Filter, ShoppingAddForm, ShoppingInfo, ShoppingList } from './'
+import { Filter, SearchPanel, ShoppingAddForm, ShoppingInfo, ShoppingList } from './'
 import { array } from '../constants/'
 
 class App extends Component {
@@ -8,6 +8,7 @@ class App extends Component {
         super(props)
         this.state = {
             data: array,
+            search: '',
         }
     }
 
@@ -77,6 +78,7 @@ class App extends Component {
                 <div className='wrapper'>
                     <div className='wrapper-card'>
                         <ShoppingInfo dataLength={dataLength} />
+                        <SearchPanel />
                         <ShoppingAddForm onAdd={onAdd} />
                         <ShoppingList 
                             data={data} 
