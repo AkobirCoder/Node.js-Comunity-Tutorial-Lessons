@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Filter = () => {
-    return (
-        <div className='filter'>
-            <div className='btns'>
-                <button className='active'>All products</button>
-                <button>Completed</button>
-                <button>Big size</button>
+class Filter extends Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        return (
+            <div className='filter'>
+                <div className='btns'>
+                    <button className='active'>All products</button>
+                    <button>Completed</button>
+                    <button>Big size</button>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Filter
