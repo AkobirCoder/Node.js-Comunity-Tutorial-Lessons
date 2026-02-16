@@ -66,22 +66,42 @@ class App extends Component {
         // console.log(newArray)
     }
 
-    render() {
-        const {data} = this.state
+    onSearch = (array, term) => {
+        if (term.length === 0) {
+            return array
+        } else {
+            return array.filter((arrayItem) => {
+                return arrayItem.title.toLowerCase().indexOf(term.toLowerCase()) > -1
+            })
+        }
+    }
 
-        const {onDelete, onToggleActive, onAdd} = this
+    onUpdateSearch = (search) => {
+        this.setState(() => {
+            return {
+                search: search,
+            }
+        })
+    }
+
+    render() {
+        const {data, search} = this.state
+
+        const {onDelete, onToggleActive, onAdd, onSearch, onUpdateSearch} = this
 
         const dataLength = data.length
+
+        const allData = onSearch(data, search)
 
         return (
             <div className='app'>
                 <div className='wrapper'>
                     <div className='wrapper-card'>
                         <ShoppingInfo dataLength={dataLength} />
-                        <SearchPanel />
+                        <SearchPanel onUpdateSearch={onUpdateSearch} />
                         <ShoppingAddForm onAdd={onAdd} />
                         <ShoppingList 
-                            data={data} 
+                            data={allData} 
                             onDelete={onDelete} 
                             onToggleActive={onToggleActive}
                         />
