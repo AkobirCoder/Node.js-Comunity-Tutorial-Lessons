@@ -9,6 +9,7 @@ class App extends Component {
         this.state = {
             data: array,
             search: '',
+            filter: 'all',
         }
     }
 
@@ -66,7 +67,7 @@ class App extends Component {
         // console.log(newArray)
     }
 
-    onSearch = (array, term) => {
+    searchData = (array, term) => {
         if (term.length === 0) {
             return array
         } else {
@@ -84,28 +85,70 @@ class App extends Component {
         })
     }
 
-    render() {
-        const {data, search} = this.state
+    filterData = (array, filter) => {
+        switch (filter) {
+            case 'completed':
+                return array.filter((arrayItem) => {
+                    return arrayItem.active
+                })
 
-        const {onDelete, onToggleActive, onAdd, onSearch, onUpdateSearch} = this
+            case 'big-size':
+                return array.filter((arrayItem) => {
+                    return arrayItem.size >= 10
+                })
+        
+            default:
+                return array
+        }
+    }
+
+    onFilterSelect = (filter) => {
+        this.setState(() => {
+            return {
+                filter: filter,
+            }
+        })
+    }
+
+    render() {
+        const {data, search, filter} = this.state
+
+        const {
+            onDelete, 
+            onToggleActive, 
+            onAdd, 
+            searchData, 
+            onUpdateSearch, 
+            filterData, 
+            onFilterSelect
+        } = this
 
         const dataLength = data.length
 
-        const allData = onSearch(data, search)
+        const allData = filterData(searchData(data, search), filter)
 
         return (
             <div className='app'>
                 <div className='wrapper'>
                     <div className='wrapper-card'>
-                        <ShoppingInfo dataLength={dataLength} />
-                        <SearchPanel onUpdateSearch={onUpdateSearch} />
-                        <ShoppingAddForm onAdd={onAdd} />
+                        <ShoppingInfo 
+                            dataLength={dataLength} 
+                        />
+                        <SearchPanel 
+                            onUpdateSearch={onUpdateSearch} 
+                        />
+                        <ShoppingAddForm 
+                            onAdd={onAdd} 
+                        />
                         <ShoppingList 
                             data={allData} 
                             onDelete={onDelete} 
                             onToggleActive={onToggleActive}
                         />
-                        <Filter />
+                        <Filter 
+                            filter={filter} 
+                            onFilterSelect={onFilterSelect} 
+                        />
                     </div>
                     <img src="/earth.svg" alt="Earth image" />
                 </div>
