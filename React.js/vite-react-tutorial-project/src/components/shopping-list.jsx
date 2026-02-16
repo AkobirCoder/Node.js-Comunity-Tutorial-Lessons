@@ -12,7 +12,7 @@ class ShoppingList extends Component {
         return (
             <div className='shopping-list'>
                 {
-                    data.map((item) => {
+                    data.length ? data.map((item) => {
                         return (
                             <ShoppingListItem
                                 key={item.id}
@@ -22,6 +22,26 @@ class ShoppingList extends Component {
                             />
                         )
                     })
+                    : (
+                        <div 
+                            style={{
+                                display: 'flex', 
+                                flexDirection: 'column'
+                            }}
+                        >
+                            <img src="/not-found.png" height={'50%'} alt="not found image" />
+                            <p 
+                                style={{
+                                    color: 'white', 
+                                    textAlign: 'center', 
+                                    fontSize: 20,
+                                    fontWeight: 600
+                                }}
+                            >
+                                Not found
+                            </p>
+                        </div>
+                    )
                 }
             </div>
         )
